@@ -15,7 +15,7 @@ The demo utilizes a Seeed reComputer J2021 (Jetson Xavier NX) executing six AI m
 
 ### Hardware
 
-- Seeed reComputer J2021 (Jetson Xavier NX)
+- Seeed reComputer J2021 (Jetson Xavier NX) — [Purchase from Newark](https://www.newark.com/seeed-studio/110061381/nvidia-jetson-xavier-nx-8gb-16gb/dp/62AK4319)
 - Two Logitech BRIO 4K USB cameras:
   - **Camera 1**: Positioned at eye level, front-facing for AI model demonstrations.
   - **Camera 2**: Positioned overhead, aimed downward for engagement monitoring.
@@ -25,15 +25,16 @@ The demo utilizes a Seeed reComputer J2021 (Jetson Xavier NX) executing six AI m
 
 ### Software Requirements
 
-- NVIDIA JetPack 5.1.5 (Ubuntu 20.04)
+- [NVIDIA JetPack 5.1.5 (Ubuntu 20.04)](https://developer.nvidia.com/embedded/jetpack-sdk-512)
 - IoTConnect SDK Snap
-- Modified jetson-inference Python scripts (provided via GitHub)
+- Modified jetson-inference Python scripts (from this repo)
 - OTA update mechanism (provided scripts)
 
 ## Required Files (GitHub)
 
-- [IoTConnect Device Template](https://github.com/\[YOUR_REPO]/NVIDIAdemo_template.JSON)
-- [Dashboard Configuration Import](https://github.com/\[YOUR_REPO]/AWS_CXO-Canonical_NVIDIA_Jetson_dashboard_export.json)
+- [Device Template for IOTCONNECT](https://github.com/avnet-iotconnect/avnet-iotconnect-iotc-jetson-demo/blob/master/templates/NVIDIAdemo_template.json)
+- [Dashboard Configuration Import](https://github.com/avnet-iotconnect/avnet-iotconnect-iotc-jetson-demo/blob/master/dashboards/AWS_CXO-Canonical_NVIDIA_Jetson_dashboard_export.json)
+- [This README & Scripts](https://github.com/avnet-iotconnect/avnet-iotconnect-iotc-jetson-demo)
 
 ## Step-by-Step Installation
 
@@ -41,7 +42,7 @@ The demo utilizes a Seeed reComputer J2021 (Jetson Xavier NX) executing six AI m
 
 Follow NVIDIA’s JetPack installation guide for version 5.1.5:
 
-[NVIDIA JetPack SDK Installation](https://developer.nvidia.com/embedded/jetpack)
+[NVIDIA JetPack SDK 5.1.2 Download](https://developer.nvidia.com/embedded/jetpack-sdk-512)
 
 ### 2. Install IoTConnect SDK Snap
 
@@ -59,20 +60,22 @@ snap services iotconnect
 
 ### 3. Clone and Set Up Modified Jetson Inference Examples
 
-Clone the modified jetson-inference repository into the correct directory:
+Clone the repository:
 
 ```bash
-git clone [YOUR_REPO_URL] ~/jetson-inference
-cd ~/jetson-inference/python/examples
+git clone https://github.com/avnet-iotconnect/avnet-iotconnect-iotc-jetson-demo.git
+cd avnet-iotconnect-iotc-jetson-demo
 ```
 
-Copy provided AI model files and labels to Snap common directory:
+Then copy the modified AI scripts and models into the correct location:
 
 ```bash
+sudo cp examples/*.py ~/jetson-inference/python/examples/
+sudo mkdir -p /var/snap/iotconnect/common/models/
 sudo cp -r models/* /var/snap/iotconnect/common/models/
 ```
 
-Set the active model via:
+Set the active model:
 
 ```bash
 echo "segnet2" | sudo tee /var/snap/iotconnect/common/models/current-model.txt
@@ -101,45 +104,42 @@ python3 iotc-launcher.py
 python3 detectnet_ppl_pose-iotc.py /dev/video4
 ```
 
-The IoTConnect dashboard commands control the execution of the models remotely.
+The IOTCONNECT dashboard commands control model execution.
 
 ## Dashboard Configuration
 
-Import the provided IoTConnect dashboard configuration:
+Import the provided dashboard:
 
-[Dashboard Template](https://github.com/\[YOUR_REPO]/AWS_CXO-Canonical_NVIDIA_Jetson_dashboard_export.json)
+[Dashboard Import JSON](https://github.com/avnet-iotconnect/avnet-iotconnect-iotc-jetson-demo/blob/master/dashboards/AWS_CXO-Canonical_NVIDIA_Jetson_dashboard_export.json)
 
-Dashboard capabilities include:
+Key features:
 
-- Launching and stopping AI models via commands.
-- Adjusting telemetry frequency.
-- Defining interaction zones via box coordinates.
-- Real-time telemetry monitoring (CPU, GPU, memory usage).
+- Launch and stop AI demos.
+- Telemetry frequency control.
+- Interaction box (x, y, width, height) definition.
+- Real-time metrics (CPU, GPU, Memory).
 
 ## OTA Model Updates
 
-Prepare OTA packages:
+Package models:
 
 ```bash
 cd ~/jetson-inference/python/examples/models
 tar -czvf ~/jetson-inference/python/examples/ota/model_update.tar.gz model.onnx labels.txt config.json
 ```
 
-Upload OTA packages to AWS S3 and trigger updates through the IoTConnect dashboard.
+Upload to S3 and trigger an OTA command from the IOTCONNECT dashboard.
 
 ## Troubleshooting
 
-- Confirm the camera paths (`/dev/video0`, `/dev/video4`) match your setup.
-- Check Snap logs:
-  ```bash
-  snap logs iotconnect
-  ```
-- Ensure dashboard commands and telemetry attributes match provided templates.
+- Check camera device paths (`/dev/video0`, `/dev/video4`).
+- Run `snap logs iotconnect` to debug.
+- Ensure device template and commands match the provided JSON.
 
 ## Additional Resources
 
-- [Official IoTConnect Documentation](https://www.iotconnect.io)
-- [NVIDIA Jetson Inference Documentation](https://github.com/dusty-nv/jetson-inference)
+- [IoTConnect Platform](https://www.iotconnect.io)
+- [Jetson Inference GitHub](https://github.com/dusty-nv/jetson-inference)
 
 ## License
 
