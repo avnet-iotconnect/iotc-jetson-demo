@@ -1,0 +1,337 @@
+{
+    "code": "NVIDIAdemo",
+    "name": "NVIDIAdemo",
+    "authType": 2,
+    "attributes": [
+        {
+            "name": "demo_name",
+            "type": "STRING",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "demo_version",
+            "type": "STRING",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "model_name",
+            "type": "STRING",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "label",
+            "type": "STRING",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "confidence",
+            "type": "INTEGER",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "source",
+            "type": "STRING",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "temperature",
+            "type": "DECIMAL",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "status",
+            "type": "STRING",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "car",
+            "type": "INTEGER",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "bike",
+            "type": "INTEGER",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "person",
+            "type": "INTEGER",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "class_id",
+            "type": "INTEGER",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "timestamp",
+            "type": "TIME",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "class_description",
+            "type": "STRING",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "average_depth_m",
+            "type": "DECIMAL",
+            "description": "depthnet-iotc.py",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "min_depth_m",
+            "type": "DECIMAL",
+            "description": "depthnet-iotc.py",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "max_depth_m",
+            "type": "DECIMAL",
+            "description": "depthnet-iotc.py",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "keypoints",
+            "type": "OBJECT",
+            "description": "",
+            "childs": [
+                {
+                    "name": "nose",
+                    "type": "LATLONG",
+                    "description": "",
+                    "unit": "",
+                    "attributeColor": ""
+                },
+                {
+                    "name": "left_eye",
+                    "type": "STRING",
+                    "description": "",
+                    "unit": "",
+                    "attributeColor": ""
+                },
+                {
+                    "name": "right_eye",
+                    "type": "STRING",
+                    "description": "",
+                    "unit": "",
+                    "attributeColor": ""
+                }
+            ],
+            "aggregateTypes": []
+        },
+        {
+            "name": "gpu",
+            "type": "DECIMAL",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "cpu",
+            "type": "DECIMAL",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "mem",
+            "type": "DECIMAL",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "gpu_freq",
+            "type": "DECIMAL",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "emc_freq",
+            "type": "DECIMAL",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "active_script",
+            "type": "STRING",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "current_occupancy",
+            "type": "DECIMAL",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "occupancy_level",
+            "type": "STRING",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "interaction_active",
+            "type": "STRING",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "segnet_coverage_percentages",
+            "type": "OBJECT",
+            "description": "",
+            "childs": [
+                {
+                    "name": "background",
+                    "type": "DECIMAL",
+                    "description": "",
+                    "unit": "",
+                    "attributeColor": ""
+                },
+                {
+                    "name": "aeroplane",
+                    "type": "DECIMAL",
+                    "description": "",
+                    "unit": "",
+                    "attributeColor": ""
+                },
+                {
+                    "name": "bicycle",
+                    "type": "DECIMAL",
+                    "description": "",
+                    "unit": "",
+                    "attributeColor": ""
+                },
+                {
+                    "name": "person",
+                    "type": "DECIMAL",
+                    "description": "",
+                    "unit": "",
+                    "attributeColor": ""
+                },
+                {
+                    "name": "pottedplant",
+                    "type": "DECIMAL",
+                    "description": "",
+                    "unit": "",
+                    "attributeColor": ""
+                },
+                {
+                    "name": "chair",
+                    "type": "DECIMAL",
+                    "description": "",
+                    "unit": "",
+                    "attributeColor": ""
+                }
+            ],
+            "aggregateTypes": []
+        },
+        {
+            "name": "segnet_dominant_class",
+            "type": "STRING",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "segnet_dominant_class_coverage",
+            "type": "DECIMAL",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        },
+        {
+            "name": "box_coordinates",
+            "type": "STRING",
+            "description": "",
+            "unit": "",
+            "aggregateTypes": []
+        }
+    ],
+    "commands": [
+        {
+            "name": "Stop Demo",
+            "command": "stop_demo",
+            "requiredParam": false,
+            "requiredAck": true,
+            "isOTACommand": false
+        },
+        {
+            "name": "Launch Demo",
+            "command": "launch",
+            "requiredParam": true,
+            "requiredAck": true,
+            "isOTACommand": false
+        },
+        {
+            "name": "Change Telemetry Frequency",
+            "command": "set_frequency",
+            "requiredParam": true,
+            "requiredAck": true,
+            "isOTACommand": false
+        },
+        {
+            "name": "\\Launcher Demo Frequency",
+            "command": "set_launcher_frequency",
+            "requiredParam": true,
+            "requiredAck": true,
+            "isOTACommand": false
+        },
+        {
+            "name": "Define Box x, y, width, height",
+            "command": "set_box",
+            "requiredParam": true,
+            "requiredAck": true,
+            "isOTACommand": false
+        }
+    ],
+    "messageVersion": "2.1",
+    "msgCode": "XG4E23I",
+    "capability": "0",
+    "properties": {
+        "description": null,
+        "dataFrequency": "5",
+        "fileSupport": false
+    },
+    "_meta": {
+        "version": "2.0"
+    }
+}
