@@ -1,6 +1,6 @@
 ## IoTConnect SDK Snap with Canonical: Edge AI Kiosk Demo
 
-This detailed guide provides instructions for recreating the IoTConnect SDK Snap demo, showcasing Edge AI with NVIDIA Jetson and AWS Bedrock integration for generative AI insights.
+This detailed guide provides instructions for recreating the IoTConnect SDK Snap demo, showcasing Edge AI with NVIDIA Jetson.
 
 ### Demo Overview
 
