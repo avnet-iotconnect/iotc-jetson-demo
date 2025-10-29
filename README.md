@@ -1,6 +1,6 @@
-## IoTConnect SDK Snap with Canonical: Edge AI Kiosk Demo
+## /IOTCONNECT SDK Snap with Canonical: Edge AI Kiosk Demo
 
-This detailed guide provides instructions for recreating the IoTConnect SDK Snap demo, showcasing Edge AI with NVIDIA Jetson.
+This detailed guide provides instructions for recreating the /IOTCONNECT SDK Snap demo, showcasing Edge AI with NVIDIA Jetson.
 
 ### Demo Overview
 
@@ -13,7 +13,7 @@ The demo utilizes a Seeed reComputer J2021 (Jetson Xavier NX) executing six AI m
 - **ImageNet**
 - **ActionNet**
 
-Each model is managed through Canonical Snapcraft packages and controlled remotely via the IoTConnect dashboard. The setup includes:
+Each model is managed through Canonical Snapcraft packages and controlled remotely via the /IOTCONNECT dashboard. The setup includes:
 
 - Real-time CPU, GPU, and memory telemetry visualization.
 - An overhead Logitech BRIO 4K camera monitoring booth engagement through PoseNet and DetectNet.
@@ -36,14 +36,14 @@ Each model is managed through Canonical Snapcraft packages and controlled remote
 ### Software Requirements
 
 - [NVIDIA JetPack 5.1.5 (Ubuntu 20.04)](https://developer.nvidia.com/embedded/jetpack-sdk-512)
-- IoTConnect SDK Snap
+- /IOTCONNECT SDK Snap
 - Modified Jetson Inference Python scripts
 - OTA update mechanism scripts
 - **jtop (Jetson statistics monitoring tool)**
 
 ### Required Files (GitHub)
 
-- [Device Template for IoTConnect](https://github.com/avnet-iotconnect/avnet-iotconnect-iotc-jetson-demo/blob/master/templates/NVIDIAdemo_template.json)
+- [Device Template for /IOTCONNECT](https://github.com/avnet-iotconnect/avnet-iotconnect-iotc-jetson-demo/blob/master/templates/NVIDIAdemo_template.json)
 - [Dashboard Export File](https://github.com/avnet-iotconnect/avnet-iotconnect-iotc-jetson-demo/blob/master/dashboards/AWS_CXO-Canonical_NVIDIA_Jetson_dashboard_export.json)
 - [Scripts & Models for Jetson Inference](https://github.com/avnet-iotconnect/avnet-iotconnect-iotc-jetson-demo)
 
@@ -55,7 +55,7 @@ Follow NVIDIA's installation guide:
 
 [NVIDIA JetPack SDK 5.1.2 Download](https://developer.nvidia.com/embedded/jetpack-sdk-512)
 
-#### 2. Install IoTConnect SDK Snap
+#### 2. Install /IOTCONNECT SDK Snap
 
 ```bash
 sudo snap install iotconnect
@@ -89,7 +89,7 @@ Use three terminals:
 sudo snap start iotconnect.socket
 ```
 
-**Terminal 2 (IoTConnect Model Launcher)**:
+**Terminal 2 (/IOTCONNECT Model Launcher)**:
 
 ```bash
 cd ~/jetson-inference/python/examples
@@ -138,7 +138,7 @@ cd ~/jetson-inference/python/examples/models
 tar -czvf ~/jetson-inference/python/examples/ota/model_update.tar.gz model.onnx labels.txt config.json
 ```
 
-Upload to AWS S3 and send OTA commands via IoTConnect dashboard.
+Upload to AWS S3 and send OTA commands via /IOTCONNECT dashboard.
 
 ### Troubleshooting
 
@@ -172,7 +172,7 @@ The demo includes enhanced capabilities such as detecting wrist interactions nea
 
 ### Additional Resources
 
-- [IoTConnect Platform](https://www.iotconnect.io)
+- [/IOTCONNECT Platform](https://www.iotconnect.io)
 - [Jetson Inference GitHub](https://github.com/dusty-nv/jetson-inference)
 
 ### License
@@ -184,14 +184,14 @@ Licensed under the MIT License.
 
 To ensure proper function of the demo, use three terminals:
 
-- **Terminal 1: Start IoTConnect socket**
+- **Terminal 1: Start /IOTCONNECT socket**
   - Runs the socket listener to enable telemetry and command exchange.
   ```bash
   sudo snap start iotconnect.socket
   ```
 
-- **Terminal 2: Launch IoTConnect AI launcher**
-  - Enables IoTConnect dashboard to launch and stop demos via commands.
+- **Terminal 2: Launch /IOTCONNECT AI launcher**
+  - Enables /IOTCONNECT dashboard to launch and stop demos via commands.
   ```bash
   python3 iotc-launcher.py
   ```
@@ -215,7 +215,7 @@ sudo chmod 666 /var/snap/iotconnect/common/iotc.sock
 
 ### Sample Telemetry Output
 
-This is an example of telemetry successfully sent to IoTConnect:
+This is an example of telemetry successfully sent to /IOTCONNECT:
 ```json
 {
   "timestamp": 1749074557,
